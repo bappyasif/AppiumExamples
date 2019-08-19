@@ -26,10 +26,10 @@ public class AppiumEnvironmentConfigTest {
         capabilities.setCapability("deviceName", "emulator-5554");
 
         // Set BROWSER_NAME desired capability. It's Android in our case here.
-        capabilities.setCapability(CapabilityType.BROWSER_NAME, "Android");
+        //capabilities.setCapability(CapabilityType.BROWSER_NAME, "Android");
 
         // Set android VERSION desired capability. Set your mobile device's OS version.
-        //capabilities.setCapability(CapabilityType.VERSION, "7.1.1");
+        capabilities.setCapability(CapabilityType.VERSION, "7.1.1");
 
         // Set android platformName desired capability. It's Android in our case here.
         capabilities.setCapability("platformName", "Android");
@@ -37,12 +37,12 @@ public class AppiumEnvironmentConfigTest {
         // Set android appPackage desired capability. It is
         // com.android.calculator2 for calculator application.
         // Set your application's appPackage if you are using any other app.
-        capabilities.setCapability("appPackage", "com.ststudio.smart.calculator");
+        capabilities.setCapability("appPackage", "com.james.SmartCalculator");
 
         // Set android appActivity desired capability. It is
         // com.android.calculator2.Calculator for calculator application.
         // Set your application's appPackage if you are using any other app.
-        capabilities.setCapability("appActivity", "com.st.calculator.main.MainActivity");
+        capabilities.setCapability("appActivity", "com.james.SmartCalculator.MainActivity");
 
         // Created object of RemoteWebDriver will all set capabilities.
         // Set appium server address and port number in URL string.
@@ -54,17 +54,17 @@ public class AppiumEnvironmentConfigTest {
     @Test
     public void CommencingTest(){
 
-        MobileElement el1 = (MobileElement) appium_Driver.findElementById("com.ststudio.smart.calculator:id/kb_8");
+        MobileElement el1 = (MobileElement) appium_Driver.findElementById("com.james.SmartCalculator:id/b8");
         el1.click();
-        MobileElement el2 = (MobileElement) appium_Driver.findElementById("com.ststudio.smart.calculator:id/kb_multiply");
+        MobileElement el2 = (MobileElement) appium_Driver.findElementById("com.james.SmartCalculator:id/bMul");
         el2.click();
-        MobileElement el3 = (MobileElement) appium_Driver.findElementById("com.ststudio.smart.calculator:id/kb_2");
+        MobileElement el3 = (MobileElement) appium_Driver.findElementById("com.james.SmartCalculator:id/b2");
         el3.click();
-        MobileElement el4 = (MobileElement) appium_Driver.findElementById("com.ststudio.smart.calculator:id/kb_equal");
+        MobileElement el4 = (MobileElement) appium_Driver.findElementById("com.james.SmartCalculator:id/bResult");
         el4.click();
 
         //Assert.assertEquals(driver.findElementById("com.ststudio.smart.calculator:id/text").getText(), "16");
-        Assert.assertEquals(appium_Driver.findElementById("com.ststudio.smart.calculator:id/text").getText(), "16");
+        Assert.assertEquals(appium_Driver.findElementById("com.james.SmartCalculator:id/txtCalc").getText(), "16");
         System.out.print("Assertion Done");
     }
 
